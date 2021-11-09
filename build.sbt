@@ -2,7 +2,7 @@ import Dependencies._
 
 
 name := "bhoral"
-organization := "com.pgogoi"
+organization := "com.pranjutgogoi"
 
 
 
@@ -32,7 +32,7 @@ lazy val assemblySettings = Seq(
 
 lazy val root = (project in file(".")).settings(
   inThisBuild(
-    List(organization := "com.pgogoi.bhoral", scalaVersion := "2.13.5")
+    List(organization := "com.pranjutgogoi.bhoral", scalaVersion := "2.13.5")
   ),
   name := "bhoral",
   libraryDependencies ++= dwar_deps
