@@ -1,0 +1,13 @@
+logs
+target
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+/RUNNING_PID
+.idea/
+platform-logs
+.attach_*
+.DS_Store
+.bsp/
