@@ -49,7 +49,7 @@ lazy val root = (project in file(".")).settings(
 
 import xerial.sbt.Sonatype._
 
-sonatypeProfileName := "com.pranjutgogoi"
+//sonatypeProfileName := "com.pranjutgogoi"
 
 ThisBuild / sonatypeProjectHosting := Some(GitHubHosting("pranjut", "bhoral", "admin@pranjutgogoi.com"))
 
@@ -93,7 +93,7 @@ releaseProcess := Seq[ReleaseStep](
   setReleaseVersion, // set release version in version.sbt
   commitReleaseVersion, // commit the release version
   tagRelease, // create git tag
-  releaseStepCommandAndRemaining("""sonatypeOpen "com.pranjutgogoi" "bhoral""""),
+//  releaseStepCommandAndRemaining("""sonatypeOpen "com.pranjutgogoi" "bhoral""""),
   releaseStepCommandAndRemaining("+publishSigned"), // run +publishSigned command to sonatype stage release
   setNextVersion, // set next version in version.sbt
   commitNextVersion, // commint next version
