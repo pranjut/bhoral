@@ -66,12 +66,20 @@ ThisBuild / developers := List(
 
 credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
 
-publishTo := Some(
+/*publishTo := Some(
   if (isSnapshot.value)
     Opts.resolver.sonatypeSnapshots
+
   else
     Opts.resolver.sonatypeStaging
-)
+)*/
+
+ThisBuild / publishTo := {
+  val nexus = "https://s01.oss.sonatype.org/"
+  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
+  else Some("releases" at nexus + "service/local/staging/deploy/maven2")
+}
+
 
 ThisBuild / description := "A simple library which wraps slick and scala cache together"
 ThisBuild / licenses := List("Apache 2" -> new URL("http://www.apache.org/licenses/LICENSE-2.0.txt"))
