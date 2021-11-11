@@ -66,21 +66,20 @@ ThisBuild / developers := List(
 
 credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
 
-credentials += Credentials(
-  "GnuPG Key ID",
-  "gpg",
-  "B93733C0EA5377A75E1DC630B737ACB243C7AAB5",
-  "ignored"
-)
 
 ThisBuild / description := "A simple library which wraps slick and scala cache together"
 ThisBuild / licenses := List("Apache 2" -> new URL("http://www.apache.org/licenses/LICENSE-2.0.txt"))
 ThisBuild / homepage := Some(url("https://pranjutgogoi.com"))
 
 ThisBuild / pomIncludeRepository := { _ => false }
+ThisBuild / publishTo := {
+  val nexus = "https://oss.sonatype.org/"
+  if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
+  else Some("releases" at nexus + "service/local/staging/deploy/maven2")
+}
 ThisBuild / publishMavenStyle := true
 
-usePgpKeyHex("01BA0C89CEC406826F7680A162D9B4F3D67419B7")
+usePgpKeyHex("B93733C0EA5377A75E1DC630B737ACB243C7AAB5")
 sonatypeRepository := "https://s01.oss.sonatype.org/service/local"
 sonatypeCredentialHost := "s01.oss.sonatype.org"
 
