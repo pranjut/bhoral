@@ -97,7 +97,7 @@ sonatypeCredentialHost := "s01.oss.sonatype.org"
 releaseCrossBuild := true
 releaseProcess := Seq[ReleaseStep](
   checkSnapshotDependencies, // check that there are no SNAPSHOT dependencies
-//  inquireVersions, // ask user to enter the current and next verion
+  inquireVersions, // ask user to enter the current and next verion
   runClean, // clean
   runTest, // run tests
   setReleaseVersion, // set release version in version.sbt
