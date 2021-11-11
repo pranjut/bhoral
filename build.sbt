@@ -113,4 +113,7 @@ releaseProcess := Seq[ReleaseStep](
 
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
+Global / pgpPassphrase := sys.env.get("PGP_PASS").map(_.toArray)
+
+
 Test / parallelExecution := false
