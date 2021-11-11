@@ -30,7 +30,7 @@ lazy val assemblySettings = Seq(
 
 lazy val root = (project in file(".")).settings(
   inThisBuild(
-    List(organization := "com.pranjutgogoi.bhoral", scalaVersion := "2.13.5")
+    List(organization := "com.pranjutgogoi", scalaVersion := "2.13.5")
   ),
   name := "bhoral",
   libraryDependencies ++= dwar_deps
@@ -60,19 +60,11 @@ ThisBuild / scmInfo := Some(
     "scm:git@github.com:pranjut/bhoral.git"
   )
 )
-ThisBuild / developers := List(
+/*ThisBuild / developers := List(
   Developer(id="pranjut", name="Pranjut Gogoi", email="admin@pranjutgogoi.com", url=url("https://pranjutgogoi.com"))
-)
+)*/
 
 credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
-
-/*publishTo := Some(
-  if (isSnapshot.value)
-    Opts.resolver.sonatypeSnapshots
-
-  else
-    Opts.resolver.sonatypeStaging
-)*/
 
 ThisBuild / publishTo := {
   val nexus = "https://s01.oss.sonatype.org/"
@@ -86,8 +78,6 @@ ThisBuild / licenses := List("Apache 2" -> new URL("http://www.apache.org/licens
 ThisBuild / homepage := Some(url("https://pranjutgogoi.com"))
 
 ThisBuild / pomIncludeRepository := { _ => false }
-
-//ThisBuild / publishTo := sonatypePublishToBundle.value
 
 ThisBuild / publishMavenStyle := true
 
