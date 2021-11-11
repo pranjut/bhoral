@@ -111,4 +111,6 @@ releaseProcess := Seq[ReleaseStep](
   //pushChanges // push changes to git
 )
 
+ThisBuild / version := "0.0.1-SNAPSHOT"
+
 Test / parallelExecution := false
