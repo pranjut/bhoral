@@ -66,6 +66,13 @@ ThisBuild / developers := List(
 
 credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
 
+credentials += Credentials(
+  "GnuPG Key ID",
+  "gpg",
+  "2BE67AC00D699E04E840B7FE29967E804D85663F",
+  "ignored"
+)
+
 ThisBuild / description := "A simple library which wraps slick and scala cache together"
 ThisBuild / licenses := List("Apache 2" -> new URL("http://www.apache.org/licenses/LICENSE-2.0.txt"))
 ThisBuild / homepage := Some(url("https://pranjutgogoi.com"))
@@ -97,5 +104,7 @@ releaseProcess := Seq[ReleaseStep](
   pushChanges
 
 )
+
+
 
 Test / parallelExecution := false
