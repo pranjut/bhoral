@@ -69,7 +69,7 @@ credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
 credentials += Credentials(
   "GnuPG Key ID",
   "gpg",
-  "2BE67AC00D699E04E840B7FE29967E804D85663F",
+  "B93733C0EA5377A75E1DC630B737ACB243C7AAB5",
   "ignored"
 )
 
