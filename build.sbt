@@ -39,8 +39,8 @@ lazy val root = (project in file(".")).settings(
   .settings(
     assemblyPackageScala / assembleArtifact := false,
     assemblyPackageDependency / assembleArtifact := false,
-    packageDoc / publishArtifact := false,
-    packageSrc / publishArtifact := false,
+    packageDoc / publishArtifact := true,
+    packageSrc / publishArtifact := true,
     exportJars := true,
     crossPaths := true
   )
