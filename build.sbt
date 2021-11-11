@@ -89,7 +89,7 @@ releaseProcess := Seq[ReleaseStep](
   commitReleaseVersion,                   // : ReleaseStep, performs the initial git checks
   tagRelease,                             // : ReleaseStep
   ReleaseStep(action = Command.process(s"""sonatypeOpen "${organization.value}" "${name.value} v${version.value}"""", _)),
-  ReleaseStep(action = Command.process("publishSigned", _)),
+  ReleaseStep(action = Command.process("publishLocalSigned", _)),
   ReleaseStep(action = Command.process("sonatypeRelease", _)),
   setNextVersion,                         // : ReleaseStep
   commitNextVersion,                      // : ReleaseStep
