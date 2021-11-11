@@ -80,21 +80,20 @@ ThisBuild / publishMavenStyle := true
 sonatypeRepository := "https://s01.oss.sonatype.org/service/local"
 sonatypeCredentialHost := "s01.oss.sonatype.org"
 
+releaseCrossBuild := true
 releaseProcess := Seq[ReleaseStep](
-  checkSnapshotDependencies,              // : ReleaseStep
-  inquireVersions,                        // : ReleaseStep
-  runClean,                               // : ReleaseStep
-  runTest,                                // : ReleaseStep
-  setReleaseVersion,                      // : ReleaseStep
-  commitReleaseVersion,                   // : ReleaseStep, performs the initial git checks
-  tagRelease,                             // : ReleaseStep
-//  ReleaseStep(action = Command.process(s"""sonatypeOpen "${organization.value}" "${name.value}-${version.value}"""", _)),
-  ReleaseStep(action = Command.process("publishLocalSigned", _)),
-  ReleaseStep(action = Command.process("sonatypeRelease", _)),
-  setNextVersion,                         // : ReleaseStep
-  commitNextVersion,                      // : ReleaseStep
-  pushChanges
-
+  checkSnapshotDependencies, // check that there are no SNAPSHOT dependencies
+  inquireVersions, // ask user to enter the current and next verion
+  runClean, // clean
+  runTest, // run tests
+  setReleaseVersion, // set release version in version.sbt
+  commitReleaseVersion, // commit the release version
+  tagRelease, // create git tag
+  releaseStepCommandAndRemaining("+publishSigned"), // run +publishSigned command to sonatype stage release
+  setNextVersion, // set next version in version.sbt
+  commitNextVersion, // commint next version
+  releaseStepCommand("sonatypeRelease"), // run sonatypeRelease and publish to maven central
+  pushChanges // push changes to git
 )
 
 Test / parallelExecution := false
