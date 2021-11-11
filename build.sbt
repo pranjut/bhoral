@@ -110,7 +110,6 @@ releaseProcess := Seq[ReleaseStep](
   releaseStepCommand("sonatypeRelease") //, // run sonatypeRelease and publish to maven central
   //pushChanges // push changes to git
 )
-useGpg := false
 Global / pgpPassphrase := sys.env.get("PGP_PASS").map(_.toArray)
 
 
