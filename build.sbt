@@ -95,8 +95,8 @@ releaseProcess := Seq[ReleaseStep](
 //  tagRelease, // create git tag
 //  releaseStepCommandAndRemaining("""sonatypeOpen "com.pranjutgogoi" "bhoral""""),
   releaseStepCommandAndRemaining("+publishSigned"), // run +publishSigned command to sonatype stage release
-  setNextVersion, // set next version in version.sbt
-  commitNextVersion, // commint next version
+//  setNextVersion, // set next version in version.sbt
+//  commitNextVersion, // commint next version
   releaseStepCommand("sonatypeRelease") //, // run sonatypeRelease and publish to maven central
   //pushChanges // push changes to git
 )
