@@ -111,8 +111,6 @@ releaseProcess := Seq[ReleaseStep](
   //pushChanges // push changes to git
 )
 
-ThisBuild / version := "0.1.0-SNAPSHOT"
-
 Global / pgpPassphrase := sys.env.get("PGP_PASS").map(_.toArray)
 
 
