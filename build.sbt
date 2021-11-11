@@ -103,6 +103,7 @@ releaseProcess := Seq[ReleaseStep](
   setReleaseVersion, // set release version in version.sbt
   commitReleaseVersion, // commit the release version
   tagRelease, // create git tag
+  releaseStepCommandAndRemaining("""sonatypeOpen "com.pranjutgogoi" "bhoral""""),
   releaseStepCommandAndRemaining("+publishSigned"), // run +publishSigned command to sonatype stage release
   setNextVersion, // set next version in version.sbt
   commitNextVersion, // commint next version
