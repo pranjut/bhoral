@@ -105,6 +105,4 @@ releaseProcess := Seq[ReleaseStep](
 
 )
 
-
-
 Test / parallelExecution := false
