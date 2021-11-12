@@ -61,7 +61,7 @@ ThisBuild / scmInfo := Some(
   )
 )
 ThisBuild / developers := List(
-  Developer(id="pranjut", name="Pranjut Gogoi", email="admin@pranjutgogoi.com", url=url("https://pranjutgogoi.com"))
+  Developer(id="pranjut", name="Pranjut Gogoi", email="pranjut.gogoi@gmail.com", url=url("https://pranjutgogoi.com"))
 )
 
 credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
