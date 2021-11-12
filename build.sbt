@@ -79,7 +79,7 @@ ThisBuild / homepage := Some(url("https://pranjutgogoi.com"))
 
 ThisBuild / pomIncludeRepository := { _ => false }
 
-ThisBuild / publishTo := sonatypePublishToBundle.value
+//ThisBuild / publishTo := sonatypePublishToBundle.value
 
 ThisBuild / publishMavenStyle := true
 
