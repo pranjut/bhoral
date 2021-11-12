@@ -66,11 +66,11 @@ ThisBuild / scmInfo := Some(
 
 credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
 
-/*ThisBuild / publishTo := {
+ThisBuild / publishTo := {
   val nexus = "https://s01.oss.sonatype.org/"
   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
   else Some("releases" at nexus + "service/local/staging/deploy/maven2")
-}*/
+}
 
 
 ThisBuild / description := "A simple library which wraps slick and scala cache together"
