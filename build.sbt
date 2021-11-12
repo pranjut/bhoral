@@ -60,9 +60,9 @@ ThisBuild / scmInfo := Some(
     "scm:git@github.com:pranjut/bhoral.git"
   )
 )
-/*ThisBuild / developers := List(
+ThisBuild / developers := List(
   Developer(id="pranjut", name="Pranjut Gogoi", email="admin@pranjutgogoi.com", url=url("https://pranjutgogoi.com"))
-)*/
+)
 
 credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
 
