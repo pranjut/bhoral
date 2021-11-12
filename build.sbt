@@ -83,6 +83,7 @@ ThisBuild / pomIncludeRepository := { _ => false }
 
 ThisBuild / publishMavenStyle := true
 
+usePgpKeyHex("004fed698b2178ce")
 sonatypeRepository := "https://s01.oss.sonatype.org/service/local"
 sonatypeCredentialHost := "s01.oss.sonatype.org"
 
