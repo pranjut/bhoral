@@ -49,7 +49,7 @@ lazy val root = (project in file(".")).settings(
 
 import xerial.sbt.Sonatype._
 
-sonatypeProfileName := "com.pranjutgogoi"
+ThisBuild / sonatypeProfileName := "com.pranjutgogoi"
 
 ThisBuild / sonatypeProjectHosting := Some(GitHubHosting("pranjut", "bhoral", "admin@pranjutgogoi.com"))
 
@@ -66,11 +66,14 @@ ThisBuild / developers := List(
 
 credentials += Credentials(Path.userHome / ".sbt" / ".sonatype_credentials")
 
-ThisBuild / publishTo := {
+/*ThisBuild / publishTo := {
   val nexus = "https://s01.oss.sonatype.org/"
   if (isSnapshot.value) Some("snapshots" at nexus + "content/repositories/snapshots")
   else Some("releases" at nexus + "service/local/staging/deploy/maven2")
-}
+}*/
+
+publishTo := sonatypePublishToBundle.value
+
 
 
 ThisBuild / description := "A simple library which wraps slick and scala cache together"
@@ -79,32 +82,13 @@ ThisBuild / homepage := Some(url("https://pranjutgogoi.com"))
 
 ThisBuild / pomIncludeRepository := { _ => false }
 
-//ThisBuild / publishTo := sonatypePublishToBundle.value
-
 ThisBuild / publishMavenStyle := true
 
-usePgpKeyHex("DD62A837ECA8637B")
-pgpSigningKey:= Some("DD62A837ECA8637B")
+//usePgpKeyHex("DD62A837ECA8637B")
+//pgpSigningKey:= Some("DD62A837ECA8637B")
 sonatypeRepository := "https://s01.oss.sonatype.org/service/local"
 sonatypeCredentialHost := "s01.oss.sonatype.org"
 
-
-releaseCrossBuild := true
-releaseProcess := Seq[ReleaseStep](
-  checkSnapshotDependencies, // check that there are no SNAPSHOT dependencies
-  inquireVersions, // ask user to enter the current and next verion
-  runClean, // clean
-  runTest, // run tests
-//  setReleaseVersion, // set release version in version.sbt
-//  commitReleaseVersion, // commit the release version
-//  tagRelease, // create git tag
-//  releaseStepCommandAndRemaining("""sonatypeOpen "com.pranjutgogoi" "bhoral""""),
-  releaseStepCommandAndRemaining("+publishSigned"), // run +publishSigned command to sonatype stage release
-//  setNextVersion, // set next version in version.sbt
-//  commitNextVersion, // commint next version
-  releaseStepCommand("sonatypeRelease") //, // run sonatypeRelease and publish to maven central
-  //pushChanges // push changes to git
-)
 Global / pgpPassphrase := sys.env.get("PGP_PASS").map(_.toArray)
 
 
