@@ -83,8 +83,8 @@ ThisBuild / pomIncludeRepository := { _ => false }
 
 ThisBuild / publishMavenStyle := true
 
-usePgpKeyHex("004fed698b2178ce")
-pgpSigningKey:= Some("004fed698b2178ce")
+usePgpKeyHex("DD62A837ECA8637B")
+pgpSigningKey:= Some("DD62A837ECA8637B")
 sonatypeRepository := "https://s01.oss.sonatype.org/service/local"
 sonatypeCredentialHost := "s01.oss.sonatype.org"
 
