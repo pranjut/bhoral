@@ -49,7 +49,7 @@ lazy val root = (project in file(".")).settings(
 
 import xerial.sbt.Sonatype._
 
-//sonatypeProfileName := "com.pranjutgogoi"
+sonatypeProfileName := "com.pranjutgogoi"
 
 ThisBuild / sonatypeProjectHosting := Some(GitHubHosting("pranjut", "bhoral", "admin@pranjutgogoi.com"))
 
